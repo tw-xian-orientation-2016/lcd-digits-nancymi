@@ -4,6 +4,6 @@
 describe('printLCD(): a number print a LCD string', function() {
    it('given a number:string then print LCD:string', function() {
        var output = '._. ... ._.\n|_| ..| |.|\n..| ..| |_|';
-       expect(getLCDStr('910')).toEqual(output);
+       expect(printLCD('910')).toEqual(output);
    });
 });

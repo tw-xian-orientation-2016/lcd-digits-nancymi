@@ -1,12 +1,12 @@
 /**
  * Created by nancymi on 16/3/2.
  */
-function getLCDStr(number) {
+function printLCD(number) {
     var numberList = divide(number);
     var numberLCDList = translate(numberList, loadLCDResource);
-    var numberLEDStr = getLEDStr(numberLCDList);
+    var numberLCDStr = getLCDStr(numberLCDList);
 
-    return numberLEDStr;
+    return numberLCDStr;
 }
 
 function divide(number) {
@@ -27,28 +27,17 @@ function translate(numberList, loadLCDResource) {
     return numberLCDList;
 }
 
-function getLEDStr(numberLEDList) {
+function getLCDStr(numberLCDList) {
     var numberLEDStrList = [];
-    var numberLEDLineStrList = [];
-    for (var i = 0; i < numberLEDList.length; i ++) {
-        numberLEDLineStrList.push(numberLEDList[i].firstLine)
-    }
-    var numberLEDLineStr = numberLEDLineStrList.join(' ');
-    numberLEDStrList.push(numberLEDLineStr);
 
-    var numberLEDLineStrList = [];
-    for (var i = 0; i < numberLEDList.length; i ++) {
-        numberLEDLineStrList.push(numberLEDList[i].secondLine)
+    for (var i = 0; i < 3; i ++) {
+        var numberLEDLineStrList = [];
+        for (var j = 0; j < numberLCDList.length; j ++) {
+            numberLEDLineStrList.push(numberLCDList[j].line[i]);
+        }
+        var numberLEDLineStr = numberLEDLineStrList.join(' ');
+        numberLEDStrList.push(numberLEDLineStr);
     }
-    var numberLEDLineStr = numberLEDLineStrList.join(' ');
-    numberLEDStrList.push(numberLEDLineStr);
-
-    var numberLEDLineStrList = [];
-    for (var i = 0; i < numberLEDList.length; i ++) {
-        numberLEDLineStrList.push(numberLEDList[i].thirdLine)
-    }
-    var numberLEDLineStr = numberLEDLineStrList.join(' ');
-    numberLEDStrList.push(numberLEDLineStr);
 
     var numberLEDStr = numberLEDStrList.join('\n');
     return numberLEDStr;

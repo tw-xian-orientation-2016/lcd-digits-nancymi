@@ -7,9 +7,7 @@
 //|_|   ..|   |_.   ._|   ..|   ._|   |_|   ..|   |_|   ..|
 
 function numberLCD(firstLine, secondLine, thirdLine) {
-    this.firstLine = firstLine;
-    this.secondLine = secondLine;
-    this.thirdLine = thirdLine;
+    this.line = [firstLine, secondLine, thirdLine];
 }
 
 function loadLCDResource() {
