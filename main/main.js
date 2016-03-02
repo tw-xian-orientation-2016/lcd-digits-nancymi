@@ -32,7 +32,7 @@ function getLCDStr(numberLCDList) {
 
     for (var i = 0; i < 3; i ++) {
         var numberLEDLineStrList = [];
-        numberLCDList.forEach(function(numberLCD, index) {
+        numberLCDList.forEach(function(numberLCD) {
             numberLEDLineStrList.push(numberLCD.line[i]);
         });
         var numberLEDLineStr = numberLEDLineStrList.join(' ');
