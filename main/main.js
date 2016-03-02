@@ -22,7 +22,7 @@ function translate(numberList, loadLCDResource) {
     var numberLCDList = [];
     var numberLCDs = loadLCDResource();
     numberList.forEach(function(number) {
-        numberLCDList.push(numberLCDs[number])
+        numberLCDList.push(numberLCDs[number]);
     });
     return numberLCDList;
 }
@@ -32,9 +32,9 @@ function getLCDStr(numberLCDList) {
 
     for (var i = 0; i < 3; i ++) {
         var numberLEDLineStrList = [];
-        for (var j = 0; j < numberLCDList.length; j ++) {
-            numberLEDLineStrList.push(numberLCDList[j].line[i]);
-        }
+        numberLCDList.forEach(function(numberLCD, index) {
+            numberLEDLineStrList.push(numberLCD.line[i]);
+        });
         var numberLEDLineStr = numberLEDLineStrList.join(' ');
         numberLEDStrList.push(numberLEDLineStr);
     }
