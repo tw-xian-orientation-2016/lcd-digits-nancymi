@@ -8,6 +8,6 @@ describe('translate(): traslate a number list to a number lcd list', function() 
            new numberLCD('...', '..|', '..|'),
            new numberLCD('._.', '|.|', '|_|')];
 
-       expect(translate(input)).toEqual(output);
+       expect(translate(input, loadLCDResource)).toEqual(output);
    }) ;
 });
