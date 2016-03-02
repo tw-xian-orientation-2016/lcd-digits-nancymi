@@ -1,10 +1,10 @@
 /**
  * Created by nancymi on 16/3/2.
  */
-function getLEDStr(number) {
+function getLCDStr(number) {
     var numberList = divide(number);
-    var numberLEDList = translate(numberList, loadLCDResource);
-    var numberLEDStr = getLEDStr(numberLEDList);
+    var numberLCDList = translate(numberList, loadLCDResource);
+    var numberLEDStr = getLEDStr(numberLCDList);
 }
 
 function divide(number) {
@@ -17,7 +17,12 @@ function divide(number) {
 }
 
 function translate(numberList, loadLCDResource) {
-
+    var numberLCDList = [];
+    var numberLCDs = loadLCDResource();
+    numberList.forEach(function(number) {
+        numberLCDList.push(numberLCDs[number])
+    });
+    return numberLCDList;
 }
 
 function getLEDStr(numberLEDList) {
