@@ -5,6 +5,8 @@ function getLCDStr(number) {
     var numberList = divide(number);
     var numberLCDList = translate(numberList, loadLCDResource);
     var numberLEDStr = getLEDStr(numberLCDList);
+
+    return numberLEDStr;
 }
 
 function divide(number) {
