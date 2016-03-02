@@ -26,5 +26,28 @@ function translate(numberList, loadLCDResource) {
 }
 
 function getLEDStr(numberLEDList) {
+    var numberLEDStrList = [];
+    var numberLEDLineStrList = [];
+    for (var i = 0; i < numberLEDList.length; i ++) {
+        numberLEDLineStrList.push(numberLEDList[i].firstLine)
+    }
+    var numberLEDLineStr = numberLEDLineStrList.join(' ');
+    numberLEDStrList.push(numberLEDLineStr);
 
+    var numberLEDLineStrList = [];
+    for (var i = 0; i < numberLEDList.length; i ++) {
+        numberLEDLineStrList.push(numberLEDList[i].secondLine)
+    }
+    var numberLEDLineStr = numberLEDLineStrList.join(' ');
+    numberLEDStrList.push(numberLEDLineStr);
+
+    var numberLEDLineStrList = [];
+    for (var i = 0; i < numberLEDList.length; i ++) {
+        numberLEDLineStrList.push(numberLEDList[i].thirdLine)
+    }
+    var numberLEDLineStr = numberLEDLineStrList.join(' ');
+    numberLEDStrList.push(numberLEDLineStr);
+
+    var numberLEDStr = numberLEDStrList.join('\n');
+    return numberLEDStr;
 }
