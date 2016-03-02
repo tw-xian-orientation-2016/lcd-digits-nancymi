@@ -16,3 +16,9 @@ Example: 910
 |_| ..| |.|
 ..| ..| |_|
 ```
+
+
+* Task.01 divide
+* Task.02 translate
+* Task.03 getLCDStr()
+* Task printLCD() test:2.26 min
